@@ -74,6 +74,18 @@ As a user I can:
 - add photos of recipe
 
 
+# Technologies Used
+- HTML/EJS: the app uses embedded javascript to render information on the page
+- Node & Express: the app has its own server, built using Express
+- MVC Pattern: the app uses the Model View Controller (MVC) programming design pattern
+- SQL/ PG-Promise: The app persists data and uses multiple SQL tables
+- CSS3: The app is well-designed and considers user experience and usability
+- JavaScript: the app has front-end interactivity
+- JWT
+- Bcrypt: the app uses bcrypt to encrypt user passwords
+- Express-session: to store user sessions on the express server
+- Cookie-parser: to parse cookies
+- Heroku web hosting: the app is hosted on Heroku
 
 # Additional Resources
 
