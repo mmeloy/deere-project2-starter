@@ -1,6 +1,11 @@
 # Project Overview
+Grandma's Recipes, and Mom's and more!
+
+
 ## Project Description
-Use this section to describe your final project and perhaps any links to relevant sites that help convey the concept and\or functionality.
+
+I wanted to create an application that would allow my family and friends a receptical to place all of our favorite recipes accumulated over the many years from my mom, my wife, and other friends and relatives.
+
 
 # Project Links
 github repo
@@ -11,6 +16,28 @@ Upload images of wireframe to cloudinary and add the link here with a descriptio
 # wireframes
 react architecture
 Define the the React components and the architectural design of your app.
+
+# User Stories
+
+As a user I can:
+
+- register as a user on the site
+- log in to the site once registered
+- add new recipes to the site (when logged in)
+- edit recipes I create on the site (when logged in)
+- delete any recipes I created on the site (when logged in)
+- view a list of recipes stored on the site
+- search the list of recipes by a recipe name
+- filter the list of recipes by type
+- sort the list of recipes in alphabetical order, either ascending or descending
+- click on a recipe to see information about the recipe
+- see the ingredients for a selected recipe
+- read the instructions for preparing the recipe
+- see what category a recipe relates to
+- see recipes whether logged in or not
+- add link to a favorite recipe from another site
+- add photos of recipe
+
 
 # MVP/PostMVP - 5min
 The functionality will then be divided into two separate lists: MPV and PostMVP. Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.
@@ -51,27 +78,6 @@ function reverse(string) {
 SAMPLE.....
 ERROR: app.js:34 Uncaught SyntaxError: Unexpected identifier
 RESOLUTION: Missing comma after first object in sources {} object
-
-# User Stories
-
-As a user I can:
-
-- register as a user on the site
-- log in to the site once registered
-- add new recipes to the site (when logged in)
-- edit recipes I create on the site (when logged in)
-- delete any recipes I created on the site (when logged in)
-- view a list of recipes stored on the site
-- search the list of recipes by a recipe name
-- filter the list of recipes by type
-- sort the list of recipes in alphabetical order, either ascending or descending
-- click on a recipe to see information about the recipe
-- see the ingredients for a selected recipe
-- read the instructions for preparing the recipe
-- see what category a recipe relates to
-- see recipes whether logged in or not
-- add link to a favorite recipe from another site
-- add photos of recipe
 
 
 # Technologies Used
