@@ -59,26 +59,9 @@ Footer	This will render the header include the nav
 Time Frames
 Time frames are also key in the development cycle. You have limited time to code all phases of the game. Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe. Also, put a gif at the top of your Readme before you pitch, and you'll get a panda prize.
 
-# Component	Priority	Estimated Time	Time Invetsted	Actual Time
-Adding Form	H	3hrs	3.5hrs	3.5hrs
-Working with API	H	3hrs	2.5hrs	2.5hrs
-Total	H	6hrs	5hrs	5hrs
-Additional Libraries
+
+# Additional Libraries
 Use this section to list all supporting libraries and thier role in the project such as Axios, ReactStrap, D3, etc.
-
-# Code Snippet
-## Use this section to include a brief code snippet of functionality that you are proud of an a brief description. Code snippet should not be greater than 10 lines of code.
-
-function reverse(string) {
-	// here is the code to reverse a string of text
-}
-# Issues and Resolutions
-## Use this section to list of all major issues encountered and their resolution.
-
-SAMPLE.....
-ERROR: app.js:34 Uncaught SyntaxError: Unexpected identifier
-RESOLUTION: Missing comma after first object in sources {} object
-
 
 # Technologies Used
 - HTML/EJS: the app uses embedded javascript to render information on the page
@@ -92,6 +75,22 @@ RESOLUTION: Missing comma after first object in sources {} object
 - Express-session: to store user sessions on the express server
 - Cookie-parser: to parse cookies
 - Heroku web hosting: the app is hosted on Heroku
+
+# Code Snippet
+ Use this section to include a brief code snippet of functionality that you are proud of an a brief description. Code snippet should not be greater than 10 lines of code.
+
+function reverse(string) {
+	// here is the code to reverse a string of text
+}
+# Issues and Resolutions
+ Use this section to list of all major issues encountered and their resolution.
+
+SAMPLE.....
+ERROR: app.js:34 Uncaught SyntaxError: Unexpected identifier
+RESOLUTION: Missing comma after first object in sources {} object
+
+
+
 
 # Additional Resources
 
