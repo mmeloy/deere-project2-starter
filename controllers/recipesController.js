@@ -1,4 +1,5 @@
 const express = require("express");
+const recipe = require("../models/recipe");
 const router = express.Router();
 
 // Add recipe model
@@ -54,16 +55,16 @@ router.post("/", (req, res) => {
     //if not checked, req.body.readyToEat is undefined
     req.body.readyToEat = false; //do some data correction
   }
-  Fruit.create(req.body).then((newFruit) => {
+  Recipe.create(req.body).then((newFruit) => {
     res.redirect("/fruits");
   });
 });
 
 router.get("/:id/edit", function (req, res) {
-  Fruit.findByPk(req.params.id).then((foundFruit) => {
+  Recipe.findByPk(req.params.id).then((foundRecipe) => {
     Season.findAll().then((allSeasons) => {
       res.render("edit.ejs", {
-        fruit: foundFruit,
+        recipe: foundFruit,
         seasons: allSeasons,
       });
     });
@@ -79,13 +80,13 @@ router.put("/:id", (req, res) => {
     req.body.readyToEat = false;
   }
 
-  Fruit.update(req.body, {
+  recipe.update(req.body, {
     where: { id: req.params.id },
     returning: true,
   }).then((updatedFruit) => {
     Season.findByPk(req.body.season).then((foundSeason) => {
-      Fruit.findByPk(req.params.id).then((foundFruit) => {
-        foundFruit.addSeason(foundSeason);
+      Recipe.findByPk(req.params.id).then((foundFruit) => {
+        foundRecipe.addSeason(foundSeason);
         res.redirect("/fruits");
       });
     });
@@ -94,8 +95,8 @@ router.put("/:id", (req, res) => {
 
 // DELETE A RECIPE
 router.delete("/:id", (req, res) => {
-  Fruit.destroy({ where: { id: req.params.id } }).then(() => {
-    res.redirect("/fruits");
+  Recipe.destroy({ where: { id: req.params.id } }).then(() => {
+    res.redirect("/recipes");
   });
 });
 
