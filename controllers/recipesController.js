@@ -8,39 +8,39 @@ const User = require("../models").User;
 const Category = require("../models").Category;
 
 // NEW ROUTE - SEND EMPTY FORM
-router.get("/new", (req, res) => {
-  res.render("new.ejs");
+router.get("recipes/new", (req, res) => {
+        res.render("new.ejs");
 });
 
 //INDEX ROUTE - GET ALL THE RECIPES
 router.get("/", (req, res) => {
   Recipe.findAll().then((recipes) => {
-    res.render("index.ejs", {
+    res.render("recipes/index.ejs", {
       recipes: recipes,
     });
   });
 });
 
 // NEW ROUTE - SEND EMPTY FORM
-router.get("/new", (req, res) => {
+router.get("recipes/new", (req, res) => {
   res.render("new.ejs");
 });
 
 // SHOW ROUTE - GET ONE RECIPE
 router.get("/:id", (req, res) => {
   Recipe.findByPk(req.params.id, {
-    include: [
-      {
-        model: User,
-        attributes: ["name"],
-      },
-      {
-        model: Category,
-      },
-    ],
-    attributes: ["title", "description", "category", "owner", "ingredients", "instructions"],
-  }).then((Recipe) => {
-    res.render("show.ejs", {
+    // include: [
+    //   {
+    //     model: User,
+    //     attributes: ["name"],
+    //   },
+    //   {
+    //     model: Category,
+    //   },
+    // ],
+    // attributes: ["title", "description", "category", "owner", "ingredients", "instructions"],
+  }).then((recipe) => {
+    res.render("recipes/show.ejs", {
       recipe: recipe,
     });
   });
@@ -55,21 +55,21 @@ router.post("/", (req, res) => {
     //if not checked, req.body.readyToEat is undefined
     req.body.readyToEat = false; //do some data correction
   }
-  Recipe.create(req.body).then((newFruit) => {
-    res.redirect("/fruits");
+  Recipe.create(req.body).then((newRecipe) => {
+    res.redirect("/recipes");
   });
 });
 
 router.get("/:id/edit", function (req, res) {
   Recipe.findByPk(req.params.id).then((foundRecipe) => {
-    Season.findAll().then((allSeasons) => {
-      res.render("edit.ejs", {
-        recipe: foundFruit,
-        seasons: allSeasons,
+    
+      res.render("recipes/edit.ejs", {
+        recipe: foundRecipe,
+        
       });
     });
   });
-});
+
 
 //UPDATE Route
 router.put("/:id", (req, res) => {
@@ -83,15 +83,14 @@ router.put("/:id", (req, res) => {
   recipe.update(req.body, {
     where: { id: req.params.id },
     returning: true,
-  }).then((updatedFruit) => {
-    Season.findByPk(req.body.season).then((foundSeason) => {
-      Recipe.findByPk(req.params.id).then((foundFruit) => {
+  }).then((updatedRecipe) => {
+    
+      Recipe.findByPk(req.params.id).then((foundRecipe) => {
         foundRecipe.addSeason(foundSeason);
-        res.redirect("/fruits");
+        res.redirect("/recipes");
       });
     });
   });
-});
 
 // DELETE A RECIPE
 router.delete("/:id", (req, res) => {
