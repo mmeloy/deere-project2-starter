@@ -48,14 +48,7 @@ router.get("/:id", (req, res) => {
 
 //POST ROUTE - TAKES THE FORM DATA AND CREATES A NEW RECIPE
 router.post("/", (req, res) => {
-  if (req.body.readyToEat === "on") {
-    //if checked, req.body.readyToEat is set to 'on'
-    req.body.readyToEat = true; //do some data correction
-  } else {
-    //if not checked, req.body.readyToEat is undefined
-    req.body.readyToEat = false; //do some data correction
-  }
-  Recipe.create(req.body).then((newRecipe) => {
+    Recipe.create(req.body).then((newRecipe) => {
     res.redirect("/recipes");
   });
 });
