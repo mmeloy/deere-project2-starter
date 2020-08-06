@@ -22,8 +22,8 @@ router.get("/", (req, res) => {
 });
 
 // NEW ROUTE - SEND EMPTY FORM
-router.get("recipes/new", (req, res) => {
-  res.render("new.ejs");
+router.get("/new", (req, res) => {
+  res.render("recipes/new.ejs");
 });
 
 // SHOW ROUTE - GET ONE RECIPE
@@ -54,32 +54,26 @@ router.post("/", (req, res) => {
 });
 
 router.get("/:id/edit", function (req, res) {
-  Recipe.findByPk(req.params.id).then((foundRecipe) => {
-    
-      res.render("recipes/edit.ejs", {
-        recipe: foundRecipe,
-        
-      });
+      Recipe.findByPk(req.params.id).then((foundRecipe) => {
+    res.render("recipes/edit.ejs", {
+      recipe: foundRecipe,
     });
   });
+});
 
 
 //UPDATE Route
 router.put("/:id", (req, res) => {
   console.log(req.body);
-  if (req.body.readyToEat === "on") {
-    req.body.readyToEat = true;
-  } else {
-    req.body.readyToEat = false;
-  }
+  
 
-  recipe.update(req.body, {
+  Recipe.update(req.body, {
     where: { id: req.params.id },
     returning: true,
   }).then((updatedRecipe) => {
     
       Recipe.findByPk(req.params.id).then((foundRecipe) => {
-        foundRecipe.addSeason(foundSeason);
+        
         res.redirect("/recipes");
       });
     });

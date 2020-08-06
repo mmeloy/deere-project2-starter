@@ -11,9 +11,11 @@
     <h1> Recipe Show Page </h1>
     
      <%= recipe.title %>  
+    <p><%= recipe.category %></p>
+    <p><%= recipe.owner %></p>
      <p><%= recipe.description %></p> 
      <p><%= recipe.ingredients %></p>
-     <%= recipe.instructions %>
+     <p> <%= recipe.instructions %> </p>
 
     <form action="/recipes/<%=recipe.id %>?_method=DELETE" method="POST">
         <input type="submit" value="DELETE <%= recipe.title %>" />

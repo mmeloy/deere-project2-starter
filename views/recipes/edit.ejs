@@ -9,19 +9,19 @@
 
 <body>
     <h1>Edit Recipes Page</h1>
-    <form action="/recipes/"<%=Recipes.id%>?_method=PUT" method="POST">
+    <form action="/recipes/<%=recipe.id%>?_method=PUT" method="POST">
         <!--  NOTE: the form is pre-populated with values for the server-->
-        Name: <input type="text" name="name" value="<%=recipe.title%>" /><br />
+        Title: <input type="text" name="title" value="<%=recipe.title%>" /><br />
+        Description: <input type="text" name="description" value="<%=recipe.description%>" /><br />
+        Category: <input type="text" name="categfory" value="<%=recipe.category%>" /><br />
+        Owner: <input type="text" name="owner" value="<%=recipe.owner%>" /><br />
+        Ingredients: <input type="text" name="ingredients" value="<%=recipe.ingredients%>" /><br />
+        Instructions: <input type="text" name="instructions" value="<%=recipe.instructions%>" /><br />
+
               
         <br />
         <input type="submit" name="" value="Submit Changes" />
-        <select name="season">
-            <% for ( let i = 0; i < seasons.length; i++ ) { let selected = ( i == 0
-                ) ? "selected" : ""; %>
-            <option value="<%=seasons[i].id%>" selected><%=seasons[i].name%>
-            </option>
-            <% } %>
-        </select>
+        
     </form>
 
 
