@@ -1,4 +1,12 @@
 body{
     color: darkgreen;
-    background-color:darkgrey
+    background-color:darkgrey;
+
 }
+.inst {
+    margin: 30px 200px;
+    
+}
+.ing {
+    margin: 30px 400px 20px 200px;
+    }
